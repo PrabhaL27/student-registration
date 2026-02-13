@@ -1,0 +1,90 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Smooth page load animation */
+.container {
+    width: 400px;
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+.container h2 {
+    margin-bottom: 25px;
+    color: #00695c;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+/* Input fields */
+input {
+    width: 90%;
+    padding: 13px 15px;
+    margin: 14px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #00796b;
+    box-shadow: 0 0 10px rgba(0,121,107,0.25);
+}
+
+/* Primary button (Signup) */
+button {
+    padding: 12px 22px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00796b, #004d40);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Second button style (Back to Login) */
+button:nth-of-type(2) {
+    background: #ffffff;
+    color: #00796b;
+    border: 2px solid #00796b;
+}
+
+button:nth-of-type(2):hover {
+    background: #00796b;
+    color: white;
+}

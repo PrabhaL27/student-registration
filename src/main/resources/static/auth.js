@@ -1,6 +1,7 @@
 const authBaseUrl = "/students";
 
 
+
 // LOGIN
 function login() {
 

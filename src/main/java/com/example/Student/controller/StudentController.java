@@ -3,6 +3,7 @@ package com.example.Student.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.example.Student.service.StudentService;
 
 @RestController
 @RequestMapping("/students")
+@CrossOrigin(origins = "*")   // ✅ This fixes the CORS issue
 public class StudentController {
 
     private final StudentService service;
@@ -37,8 +39,8 @@ public class StudentController {
 
         Optional<Student> existingUser = repo.findByEmail(student.getEmail());
 
-        if(existingUser.isPresent() &&
-           existingUser.get().getPassword().equals(student.getPassword())) {
+        if (existingUser.isPresent() &&
+            existingUser.get().getPassword().equals(student.getPassword())) {
 
             return existingUser.get();
         }
@@ -54,7 +56,6 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
-    return service.getAllStudents();
-}
-
+        return service.getAllStudents();
+    }
 }

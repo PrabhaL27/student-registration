@@ -2,10 +2,11 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-COPY ..
+COPY . .
 
+RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
-EXPOSE 9091
+EXPOSE 8080
 
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["sh","-c","java -jar target/*.jar"]

@@ -1,4 +1,5 @@
-const authBaseUrl = "http://localhost:9091/students";
+const authBaseUrl = "/students";
+
 
 // LOGIN
 function login() {
